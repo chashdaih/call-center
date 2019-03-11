@@ -1,0 +1,21 @@
+{
+    "Register": "Registrar Alumno",
+    "Name": "Nombre",
+    "Last Name": "Apellido",
+    "E-Mail Address": "Correo electrónico",
+    "Password": "Contraseña",
+    "Confirm Password": "Confirmar contraseña",
+
+    "Login": "Iniciar sesión",
+    "Logout": "Cerrar sesión",
+    "Toggle navigation": "Alternar navegación",
+
+    "Remember Me": "Recuerdame",
+    "Forgot Your Password?": "¿Olvidó su contraseña?",
+
+    "Reset Password": "Reiniciar contraseña",
+    "Send Password Reset Link": "Enviar vínculo de reinicio de contraseña",
+
+    "Edit": "Editar mis datos"
+
+}

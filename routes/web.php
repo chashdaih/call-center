@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('callers', 'CallerController');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('profile', 'UserController@edit')->name('users.edit');
+Route::patch('users/{user}/update', 'UserController@update')->name('users.update');
