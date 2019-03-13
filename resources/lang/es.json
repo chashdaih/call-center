@@ -1,5 +1,5 @@
 {
-    "Register": "Registrar Alumno",
+    "Register": "Registrar",
     "Name": "Nombre",
     "Last Name": "Apellido",
     "E-Mail Address": "Correo electrónico",
@@ -16,6 +16,31 @@
     "Reset Password": "Reiniciar contraseña",
     "Send Password Reset Link": "Enviar vínculo de reinicio de contraseña",
 
-    "Edit": "Editar mis datos"
+    "Edit": "Editar",
+    "Update": "Actualizar",
+    "Delete": "Borrar",
+    "Optional": "Opcional",
+
+    "Age": "Edad",
+    "Phone Number": "Número telefónico",
+    "Another Phone Number": "Otro número telefónico",
+    "State": "Estado",
+    "City": "Ciudad/Localidad",
+    "File Number": "Número de expediente",
+
+    "Register New Caller": "Registrar nueva persona",
+    "There are no registered people": "No se ha registrado a ninguna persona que marque",
+    "Callers List": "Lista de personas que han marcado",
+    "Edit Caller": "Editar persona",
+
+    "Registered Students": "Alumnos registrados",
+    "Register New Student": "Registrar alumno",
+    "Account Number": "Número de cuenta",
+    "There are no registered students": "No se ha registrado a ningún estudiante",
+    "Edit Student": "Editar estudiante",
+
+    "cubicule" : "cubículo",
+    "office": "sede",
+    "reason": "motivo"
 
 }

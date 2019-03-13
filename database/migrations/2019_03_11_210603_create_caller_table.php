@@ -19,7 +19,7 @@ class CreateCallerTable extends Migration
             $table->string('last_name')->nullable(false);
             $table->unsignedTinyInteger('age');
             $table->string('phone_number');
-            $table->string('other_phone_number');
+            $table->string('other_phone_number')->nullable();
             $table->unsignedTinyInteger('state_id');
             $table->string('city');
             $table->unsignedInteger('file_number');

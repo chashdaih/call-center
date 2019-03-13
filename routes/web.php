@@ -17,7 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('callers', 'CallerController');
+Route::resource('callers', 'CallerController')->except(['show']);
+Route::resource('students', 'StudentController')->except(['show']);
+// Route::resource('offices', 'OfficeController')->except(['show']);
+Route::resource('options/{model}', 'OptionsController')->parameters([
+    '{model}' => 'id'
+]);
+// Route::resource('reasons', 'ReasonController')->except(['show']);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

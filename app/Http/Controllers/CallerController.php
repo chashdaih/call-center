@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Caller;
+use App\State;
 use Illuminate\Http\Request;
 
 class CallerController extends Controller
@@ -12,81 +13,60 @@ class CallerController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $callers = Caller::all();
+        $callers = Caller::orderBy('file_number', 'desc')->get();
 
         return view('callers.index', compact('callers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $states = State::all();
+
+        return view('callers.create', compact('states'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $attributes = $this->validateCaller();
+
+        Caller::create($attributes);
+
+        return redirect('callers');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Caller  $caller
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Caller $caller)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Caller  $caller
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Caller $caller)
     {
-        //
+        $states = State::all();
+        return view('callers.edit', compact('caller', 'states'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Caller  $caller
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Caller $caller)
     {
-        //
+        $caller->update($this->validateCaller());
+
+        return redirect('callers');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Caller  $caller
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Caller $caller)
     {
-        //
+        $caller->delete();
+
+        return redirect('callers');
+    }
+
+    protected function validateCaller()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'last_name' => 'required',
+            'age' => ['required', 'integer', 'min:0', 'max:127'],
+            'phone_number' => 'required',
+            'state_id' => ['required', 'integer', 'exists:state,id'],
+            'city' => 'required',
+            'file_number' => 'required'
+        ]);
     }
 }
