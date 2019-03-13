@@ -8,5 +8,10 @@ class Cubicule extends Model
 {
     protected $table = 'cubicule';
 
-    protected $guarded = [];
+    protected $guarded = ["id"];
+
+    public function office()
+    {
+        return $this->belongsTo('App\Office', 'office_id');
+    }
 }

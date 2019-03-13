@@ -10,6 +10,12 @@ class Call extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    public function toggleCalled()
+    {
+        $this->called = !$this->called;
+        return $this;
+    }
+
     public function office()
     {
         return $this->belongsTo('App\Office', 'office_id');

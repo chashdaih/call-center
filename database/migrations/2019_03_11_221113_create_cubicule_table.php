@@ -15,8 +15,11 @@ class CreateCubiculeTable extends Migration
     {
         Schema::create('cubicule', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable(false);
+            $table->unsignedInteger('office_id');
+            $table->string('name');
             $table->timestamps();
+
+            $table->foreign('office_id')->references('id')->on('office');
         });
     }
 

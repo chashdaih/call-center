@@ -19,11 +19,14 @@ Auth::routes();
 
 Route::resource('callers', 'CallerController')->except(['show']);
 Route::resource('students', 'StudentController')->except(['show']);
-// Route::resource('offices', 'OfficeController')->except(['show']);
+Route::resource('cubicules', 'CubiculeController')->except(['show']);
+Route::get('calls/cubs-office/{off}', 'CubiculeController@cuboff');
 Route::resource('options/{model}', 'OptionsController')->parameters([
     '{model}' => 'id'
 ]);
-// Route::resource('reasons', 'ReasonController')->except(['show']);
+Route::resource('calls', 'CallController')->except(['index', 'show']);
+Route::get('/calls/{date?}', 'CallController@index');
+Route::patch('/calls/called/{id}', 'CallController@called');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

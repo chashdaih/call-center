@@ -41,6 +41,29 @@
 
     "cubicule" : "cubículo",
     "office": "sede",
-    "reason": "motivo"
+    "reason": "motivo",
+    "Reason": "Motivo",
+    "Cubicule": "Cubículo",
+    "Office": "Sede",
+
+    "Time": "Hora",
+    "Date": "Fecha",
+    "Student": "Estudiante",
+    "Caller": "Nombre del usuario",
+    "Called?": "¿Llamó?",
+    "called": "llamó",
+    "Observations": "Observaciones",
+    "Calls List": "Lista de citas",
+    "Schedule New Call": "Agendar nueva cita",
+    
+    "Registered Cubicules": "Cubículos registrados",
+    "Register New Cubicule": "Registrar cubículo nuevo",
+    "There are no cubicules registered": "No hay cubículos registrados",
+    "Edit Cubicule": "Editar cubículo",
+    "There are no scheduled calls": "No hay citas agendadas",
+    "Schedule a new call": "Programar una nueva cita",
+    "Schedule": "Hora",
+    
+    "Edit Call": "Editar cita"
 
 }

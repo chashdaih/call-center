@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Scheadule extends Model
+class Schedule extends Model
 {
-    protected $table = 'scheadule';
+    protected $table = 'schedule';
 }

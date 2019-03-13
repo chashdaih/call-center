@@ -15,21 +15,20 @@ class CreateCallTable extends Migration
     {
         Schema::create('call', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('office_id');
             $table->unsignedInteger('cubicule_id');
+            $table->date('date');
             $table->unsignedSmallInteger('schedule_id');
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('caller_id');
             $table->unsignedSmallInteger('reason_id');
             $table->boolean('called');
-            $table->text('observation');
+            $table->text('observation')->nullable();
             $table->timestamps();
 
             $table->foreign('cubicule_id')->references('id')->on('cubicule');
             $table->foreign('schedule_id')->references('id')->on('schedule');
             $table->foreign('student_id')->references('id')->on('student');
             $table->foreign('caller_id')->references('id')->on('caller');
-            $table->foreign('office_id')->references('id')->on('office');
             $table->foreign('reason_id')->references('id')->on('reason');
         });
     }

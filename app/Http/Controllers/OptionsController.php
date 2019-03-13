@@ -16,7 +16,7 @@ class OptionsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $allowed_options = ['cubicule', 'office', 'reason'];
+        $allowed_options = ['office', 'reason'];
         $this->model_name = request()->route()->parameter('model');
         $this->id = request()->route()->parameter('id');
         if (!in_array($this->model_name, $allowed_options)) {
