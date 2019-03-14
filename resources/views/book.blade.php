@@ -2,32 +2,61 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md">
-
-            
-
-            {{-- <h1>{{ __('Calls for Office').' '.$initial_office->name }}</h1>
-            <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="office_id">{{ __('Change Office') }}</label>
-                <div class="col-md-4">
-                    <select id="office_id" class="form-control" name="office_id">
-                    @foreach ($offices as $office)
-                        <option value="{{ $office->id }}">{{ $office->name }}</option>
+        <h1>{{ $date }}</h1>
+        <h2>{{ $office }}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Cubículos
+                    </th>
+                    @foreach ($schedules as $schedule)
+                    <th>{{ $schedule->time }}</th>
                     @endforeach
-                    </select>
-                </div>
-            </div> --}}
-        </div>
-        {{-- <div class="col-md">
-            <h1>{{ __('Calls for Date').' '.$current_date }}</h1>
-            <div class="form-group row">
-                <label class="col-md-4 col-form-label text-md-right" for="date">{{ __('Change Date') }}</label>
-                <div class="col-md-4">
-                    <input id="date" type="date" class="form-control" name="date" value="{{ $current_date }}">
-                </div>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($data as $cubicule => $items)
+                    <tr>
+                        <th>{{ $cubicule }}</th>
+                        @foreach ($items as $item => $id)
+                        <td>{{$id}}</td>
+                            
+                        @endforeach
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    {{-- <div class="row ">
+        <div class="col-md">
+            @foreach ($data as $date => $offices)
+            <h1>{{ $date }}</h1>
+            <div class="row">
+                @foreach ($offices as $office => $cubicules)
+                    <div class="col">
+                        <h2>{{ $office }}</h2>
+                        <div class="row">
+                        @foreach ($cubicules as $cubicule => $schs)
+                            <div class="col">
+                                <h3>{{ $cubicule }}</h3>
+                                @foreach ($schedules as $schedule)
+                                    <div class="row">
+                                        <p>{{$schedule->time}}</p>
+                                        @foreach ($schs as $call)
+                                            @if ($call->schedule->id == $schedule->id)
+                                                <p> {{ $call->student->name }}</p>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                 @endforeach
+                            </div>
+                        @endforeach
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        </div> --}}
-    </div>
+            
+            @endforeach
+    </div> --}}
 </div>
 @endsection
