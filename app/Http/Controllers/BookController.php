@@ -19,9 +19,11 @@ class BookController extends Controller
             if(!in_array($call->date, $dates)){
                 array_push($dates, $call->date);
             }
-            if(!in_array($))
+            if(!in_array($call->office, $offices)) {
+                array_push($offices, $call->office);
+            }
         }
-        dd($dates);
+        // dd($dates);
 
         // $offices = Office::all();
         // $initial_office = $offices[0];
