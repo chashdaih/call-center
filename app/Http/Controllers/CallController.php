@@ -19,11 +19,12 @@ class CallController extends Controller
     {
         $this->middleware('auth');
 
-        $this->date = request()->route()->parameter('date');
+        
     }
     
     public function index()
     {
+        $this->date = request()->route()->parameter('date');
         // validate date
         if(is_null($this->date) || date('Y-m-d', strtotime($this->date)) !== $this->date) {
             $this->date = date('Y-m-d');
@@ -48,7 +49,6 @@ class CallController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $attributes = $this->validateCall();
         $attributes['called'] = false;
 

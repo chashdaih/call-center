@@ -11,24 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+Route::get('/', 'BookController@welcome');
+
 Route::resource('callers', 'CallerController')->except(['show']);
+
 Route::resource('students', 'StudentController')->except(['show']);
+
 Route::resource('cubicules', 'CubiculeController')->except(['show']);
+
 Route::get('calls/cubs-office/{off}', 'CubiculeController@cuboff');
-Route::resource('options/{model}', 'OptionsController')->parameters([
-    '{model}' => 'id'
-]);
+
+Route::resource('options/{model}', 'OptionsController')->parameters([ '{model}' => 'id' ]);
+
 Route::resource('calls', 'CallController')->except(['index', 'show']);
-Route::get('/calls/{date?}', 'CallController@index');
+
+Route::get('/calls/{date?}', 'CallController@index')->name('calls.index');
+
 Route::patch('/calls/called/{id}', 'CallController@called');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('profile', 'UserController@edit')->name('users.edit');
 Route::patch('users/{user}/update', 'UserController@update')->name('users.update');

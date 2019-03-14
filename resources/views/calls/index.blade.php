@@ -4,7 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1>{{__("Calls List")}}, {{ $date }}</h1>
+            <h1>{{__("Calls List Per Day")}}</h1>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label text-md-right" for="date">{{ __('Change Date') }}</label>
+                <div class="col-md-2">
+                    <input id="date" type="date" class="form-control" name="date" value="{{ $date }}">
+                </div>
+            </div>
             <h3><a href="{{ route('calls.create') }}">{{ __('Schedule New Call') }}</a></h3>
             @if (count($calls)>0)
             <table class="table">
@@ -77,6 +83,11 @@
                 // TODO untoggle check
             });
         });
+        $('#date').on('change', function() {
+            // console.log();
+            var url = "/calls/" + $(this).val();
+            window.location.href = url;
+        })
     };
 </script>
 @endsection

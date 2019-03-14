@@ -45,15 +45,21 @@
     "Reason": "Motivo",
     "Cubicule": "Cubículo",
     "Office": "Sede",
+    "Reasons": "Motivos",
+    "Cubicules": "Cubículos",
+    "Offices": "Sedes",
 
     "Time": "Hora",
     "Date": "Fecha",
     "Student": "Estudiante",
+    "Students": "Estudiantes",
     "Caller": "Nombre del usuario",
+    "Callers": "Personas",
     "Called?": "¿Llamó?",
     "called": "llamó",
     "Observations": "Observaciones",
     "Calls List": "Lista de citas",
+    "Calls List Per Day": "Lista de citas por día",
     "Schedule New Call": "Agendar nueva cita",
     
     "Registered Cubicules": "Cubículos registrados",
@@ -64,6 +70,9 @@
     "Schedule a new call": "Programar una nueva cita",
     "Schedule": "Hora",
     
-    "Edit Call": "Editar cita"
+    "Edit Call": "Editar cita",
+    "Options": "Opciones",
+    "Change Date": "Cambiar fecha"
+
 
 }

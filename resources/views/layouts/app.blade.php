@@ -32,10 +32,39 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('calls.index') }}">{{ __('Calls List') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('students.index') }}">{{ __('Students') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('callers.index') }}">{{ __('Callers') }}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a id="leftnavbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{__('Options')}} <span class="caret"></span>
+                                </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="leftnavbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('{model}.index', 'office') }}">
+                                        {{ __('Offices') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('cubicules.index') }}">
+                                        {{ __('Cubicules') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('{model}.index', 'reason') }}">
+                                        {{ __('Reasons') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                     </ul>
-
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
